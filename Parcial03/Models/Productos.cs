@@ -20,5 +20,19 @@ namespace Parcial03.Models
 
         [Required(ErrorMessage ="Ingrese el valor del producto")]
         public double valor { get; set; }
+
+        public static List<Productos> listar() 
+        { 
+            var listadoProd = new List<Productos>();
+            listadoProd.Add(new Productos()
+            {
+                id_Pro =1,
+                nombre="Edwin Crack",
+                stock=15,
+                valor=10.55
+            }
+            );
+            return listadoProd;
+        }
     }
 }

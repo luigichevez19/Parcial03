@@ -35,10 +35,10 @@
             @Html.DisplayFor(modelItem => item.productos.nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fechaPedido)
+            @Html.DisplayFor(modelItem => item.fechaPedido.Date)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fechaEntrega)
+            @Html.DisplayFor(modelItem => item.fechaEntrega.Date)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

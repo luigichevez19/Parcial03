@@ -24,7 +24,20 @@ namespace Parcial03.Models
         public string dui { get; set; }
 
         [Required]
-        [DisplayFormat(DataFormatString ="dd/MM/yyyy")]
         public DateTime fechaNaci { get; set; }
+        public static List<Clientes> listar()
+        {
+            var listadoClie = new List<Clientes>();
+            listadoClie.Add(new Clientes()
+            {
+                id_Clie=1,
+                nombres="Luis",
+                apellidos="Chevez",
+                dui="01234567-8",
+                fechaNaci = Convert.ToDateTime("03/19/1998")
+            }
+            );
+            return listadoClie;
+        }
     }
 }

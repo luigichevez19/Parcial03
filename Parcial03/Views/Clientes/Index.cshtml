@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.nombres)
@@ -38,12 +38,14 @@
             @Html.DisplayFor(modelItem => item.dui)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fechaNaci)
+            @Html.DisplayFor(modelItem => item.fechaNaci.Day)
+            @Html.DisplayFor(modelItem => item.fechaNaci.Month)
+            @Html.DisplayFor(modelItem => item.fechaNaci.Year)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_Clie }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_Clie }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_Clie })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_Clie }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_Clie }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.id_Clie })
         </td>
     </tr>
 }

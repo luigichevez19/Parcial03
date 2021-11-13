@@ -79,6 +79,37 @@ namespace Parcial03.Controllers
             ViewBag.id_Pro = new SelectList(db.productos, "id_Pro", "nombre", pedidos.id_Pro);
             return View(pedidos);
         }
+        public Int32 agregar(Pedidos pro)
+        {
+            try
+            {
+                //El error cuando es vacio el id es 0
+                //si es exito es 1
+                var lista = Pedidos.listar();
+                if(pro.id == default)
+                {
+                    return 1;
+                }
+                if (pro.id_Pro == default)
+                {
+                    return 2;
+                }
+                if (pro.id_Clie == default)
+                {
+                    //Si el nombre no se parece a ese va dar 2
+                    return 3;
+                }
+             
+                
+                lista.Add(pro);
+
+                return 0;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
 
         // POST: Pedidos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 

@@ -72,7 +72,41 @@ namespace Parcial03.Controllers
             }
             return View(productos);
         }
+        public Int32 agregar(Productos pro)
+        {
+            try
+            {
+                //El error cuando es vacio el id es 0
+                //si es exito es 1
+                var lista = Productos.listar();
+                if (pro.id_Pro == default)
+                {
+                    return 1;
+                }
+                if(pro.nombre == "Edwin")
+                {
+                    //Si el nombre no se parece a ese va dar 2
+                    return 2;
+                }
+                if (pro.valor >= 0)
+                {
+                    //Si el nombre no se parece a ese va dar 2
+                    return 3;
+                }
+                if (pro.stock >= 0)
+                {
+                    //Si el nombre no se parece a ese va dar 2
+                    return 4;
+                }
+                lista.Add(pro);
 
+                return 0;
+            }
+             catch
+            {
+                return 1;
+            }
+        }
         // POST: Productos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
